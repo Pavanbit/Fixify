@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { MapPin, Clock, DollarSign, MessageSquare, CheckCircle, XCircle, ArrowLeft } from 'lucide-react';
+import { useParams, Link } from 'react-router-dom';
+import { MapPin, Clock, DollarSign, MessageSquare, ArrowLeft } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useJobs } from '../contexts/JobContext';
 import { format } from 'date-fns';
@@ -8,9 +8,7 @@ import { format } from 'date-fns';
 const JobDetailsPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { currentUser, userType } = useAuth();
-  const { getJobById, updateJobStatus } = useJobs();
-  const navigate = useNavigate();
-  
+  const { getJobById, updateJobStatus } = useJobs();  
   const [job, setJob] = useState(id ? getJobById(id) : undefined);
   const [isUpdating, setIsUpdating] = useState(false);
   const [error, setError] = useState('');
