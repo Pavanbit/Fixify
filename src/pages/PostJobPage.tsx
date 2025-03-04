@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useJobs } from '../contexts/JobContext';
-import { Wrench, Hammer, Paintbrush, Zap, Droplet, Trash2, DollarSign, MapPin } from 'lucide-react';
+import { Wrench, Hammer, Paintbrush, Zap, Droplet, Trash2, IndianRupee, MapPin } from 'lucide-react';
 
 const PostJobPage: React.FC = () => {
   const { currentUser } = useAuth();
@@ -40,8 +40,8 @@ const PostJobPage: React.FC = () => {
       setIsLoading(true);
       
       // Mock location coordinates - in a real app, would use geocoding API
-      const lat = 40.7128 + (Math.random() * 0.1 - 0.05);
-      const lng = -74.0060 + (Math.random() * 0.1 - 0.05);
+      const lat = 19.075983 + (Math.random() * 0.1 - 0.05);
+      const lng = 72.877655+ (Math.random() * 0.1 - 0.05);
       
       const newJob = await createJob({
         title,
@@ -132,11 +132,11 @@ const PostJobPage: React.FC = () => {
           
           <div>
             <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-1">
-              Budget (USD)
+              Budget (INR)
             </label>
             <div className="relative rounded-md shadow-sm">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <DollarSign className="h-5 w-5 text-gray-400" />
+                <IndianRupee className="h-5 w-5 text-gray-400" />
               </div>
               <input
                 type="number"

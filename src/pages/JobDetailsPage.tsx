@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { MapPin, Clock, DollarSign, MessageSquare, ArrowLeft } from 'lucide-react';
+import { MapPin, Clock, MessageSquare, ArrowLeft, IndianRupee } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useJobs } from '../contexts/JobContext';
 import { format } from 'date-fns';
@@ -127,8 +127,8 @@ const JobDetailsPage: React.FC = () => {
                   Posted {format(new Date(job.createdAt), 'MMM d, yyyy')}
                 </div>
                 <div className="flex items-center">
-                  <DollarSign className="h-4 w-4 mr-1 text-gray-400" />
-                  Budget: ${job.budget}
+                  < IndianRupee className="h-4 w-4 mr-1 text-gray-400" />
+                  Budget: &#8377;{job.budget}
                 </div>
                 <div>{job.category}</div>
               </div>

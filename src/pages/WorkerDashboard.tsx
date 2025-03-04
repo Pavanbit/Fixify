@@ -116,7 +116,7 @@ const WorkerDashboard: React.FC = () => {
                         Posted {format(new Date(job.createdAt), 'MMM d, yyyy')}
                       </div>
                       <div className="mt-2 flex items-center text-sm text-gray-500">
-                        <span className="font-medium text-gray-900">${job.budget}</span>
+                        <span className="font-medium text-gray-900">&#8377;{job.budget}</span>
                       </div>
                       <div className="mt-2 flex items-center text-sm text-gray-500">
                         {job.category}
